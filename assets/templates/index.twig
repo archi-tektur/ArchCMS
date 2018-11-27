@@ -1,6 +1,15 @@
 {% include "common/header.twig" %}
 
-<div id="vue-panel-archcms"></div>
-<script src="/js/build.js"></script>
+<main class="main-info">
+    <h1>ArchFW has been properly installed.</h1>
+    <p>Follow documentation for further steps.</p>
+</main>
+<nav class="bottom-navigation">
+    <a target="_blank" href="https://www.archi-tektur.pl">archi_tektur &copy; 2018</a>
+    <span class="divider">|</span>
+    <span class="bold">ArchFW v{{version|url_encode}}</span>
+    <span class="divider">|</span>
+    <a target="_blank" href="https://www.github.com/archi-tektur/ArchFW-Boilerplate">ArchFW Documentation</a>
+</nav>
 
 {% include "common/footer.twig" %}
