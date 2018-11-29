@@ -44,7 +44,7 @@ import VueCkeditor from 'vue-ckeditor5'
 import axios from 'axios'
 import qs from 'qs'
 
-content = ``;
+var content = ``;
 
 Vue.use(VueCkeditor.plugin, {
   editors: {
