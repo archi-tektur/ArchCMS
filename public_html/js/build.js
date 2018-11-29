@@ -11802,7 +11802,7 @@ process.umask = function() { return 0; };
 
 
 
-content = '';
+var content = '';
 
 __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */].use(__WEBPACK_IMPORTED_MODULE_2_vue_ckeditor5___default.a.plugin, {
   editors: {
@@ -11952,7 +11952,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */].use(__WEBPACK_IMPORTED_MODU
       });
     },
     getEditorContent: function getEditorContent() {
-      alert(this.htmlContent); //+"<br />"+"P.S Chuj Ci w dupę Oskarku. Twój CKEditor5 :)")
+      alert(this.htmlContent + "<br />" + "P.S Chuj Ci w dupę Oskarku. Twój CKEditor5 :)");
     }
   }
 });
@@ -12901,7 +12901,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_CKEditor5_vue__ = __webpack_require__(6);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7319ce79_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CKEditor5_vue__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1477913d_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CKEditor5_vue__ = __webpack_require__(51);
 function injectStyle (ssrContext) {
   __webpack_require__(24)
 }
@@ -12921,7 +12921,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_CKEditor5_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7319ce79_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CKEditor5_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1477913d_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CKEditor5_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -12942,7 +12942,7 @@ var content = __webpack_require__(25);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(27)("03081296", content, true, {});
+var update = __webpack_require__(27)("bff9a18c", content, true, {});
 
 /***/ }),
 /* 25 */
