@@ -2,6 +2,7 @@
 
 namespace ArchCMS\Controllers;
 
+use ArchCMS\Models\ArticleData;
 use ArchFW\Models\DatabaseFactory;
 
 class Article
@@ -13,19 +14,19 @@ class Article
         $this->db = DatabaseFactory::getInstance();
     }
 
-    public function add(): void
+    public function add(ArticleData $Data): void
     {
         $this->db->insert('articles', [
-           'ID',
-           'authorID',
-           'categoryID',
-           'title',
-           'contentShort',
-           'contentHTML',
-           'relatedImagePath',
-           'tags',
-           'date',
-           'lastEdit'
+            'ID'               => null,
+            'authorID'         => $Data->getAuthorID(),
+            'categoryID'       => $Data->getCategoryID(),
+            'title'            => $Data->getTitle(),
+            'contentShort'     => $Data->getContentShort(),
+            'contentHTML'      => $Data->getContentHTML(),
+            'relatedImagePath' => $Data->getRelatedImagePath(),
+            'tags'             => $Data->getTags(),
+            'date'             => date('Y-m-d H:i:s'),
+            'lastEdit'         => null
         ]);
     }
 }

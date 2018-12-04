@@ -11,7 +11,6 @@ class ArticleData extends Data
     private $contentHTML;
     private $relatedImagePath;
     private $tags;
-    private $date;
 
     public function __construct(
         $authorID,
@@ -20,8 +19,7 @@ class ArticleData extends Data
         $contentShort,
         $relatedImagePath,
         $contentHTML,
-        $tags,
-        $date
+        $tags
     ) {
         $this->authorID = $authorID;
         $this->categoryID = $categoryID;
@@ -30,7 +28,6 @@ class ArticleData extends Data
         $this->relatedImagePath = $relatedImagePath;
         $this->contentHTML = $contentHTML;
         $this->tags = $tags;
-        $this->date = $date;
     }
 
     public function validate(): bool
@@ -87,16 +84,6 @@ class ArticleData extends Data
     {
         return $this->contentHTML;
     }
-
-
-    /**
-     * @return mixed
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
-
 
     /**
      * @return mixed
