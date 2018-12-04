@@ -1,5 +1,6 @@
 <?php
 
+use \ArchFW\Controllers\Router;
 use ArchCMS\Models\ArticleData;
 use ArchCMS\Controllers\Article;
 
@@ -7,7 +8,6 @@ $Article = new Article();
 
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'POST':
-
         // raise an error when fields are not set
         if (!isset(
             $_POST['authorID'],
@@ -45,6 +45,35 @@ switch ($_SERVER['REQUEST_METHOD']) {
             'statusMessage' => 'Database query problem'
         ];
         break;
+    case 'GET':
+        if (Router::getNthURI(2) === 'list') {
+            if (isset($_GET['categoryID'])) {
+                return [
+                    'statusCode'    => 200,
+                    'statusMessage' => 'OK',
+                    'data'          => $Article->listByCategory($_GET['categoryID'])
+                ];
+            }
+            return [
+                'statusCode'    => 200,
+                'statusMessage' => 'OK',
+                'data'          => $Article->listArticles()
+            ];
+        }
+
+        if (is_numeric(Router::getNthURI(2))) {
+            return [
+                'statusCode'    => 200,
+                'statusMessage' => 'OK',
+                'data'          => $Article->getArticle(Router::getNthURI(2))
+            ];
+        }
+        return [
+            'statusCode'    => 400,
+            'statusMessage' => 'Bad Request: no ID'
+        ];
+
+        break;
 
     default:
         return [
@@ -52,5 +81,3 @@ switch ($_SERVER['REQUEST_METHOD']) {
             'statusMessage' => 'Method not allowed'
         ];
 }
-
-return [];

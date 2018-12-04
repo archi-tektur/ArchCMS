@@ -56,11 +56,73 @@ class Article
     }
 
     /**
+     * @param int $articleID
+     * @return array
+     */
+    public function getArticle(int $articleID): array
+    {
+        return $this->db->select('articles', [
+            'ID',
+            'authorID',
+            'categoryID',
+            'title',
+            'contentShort',
+            'contentHTML',
+            'relatedImagePath',
+            'tags',
+            'date',
+            'lastEdit'
+        ], [
+            'ID[=]' => $articleID
+        ]);
+    }
+
+    /**
+     * @return array
+     */
+    public function listArticles(): array
+    {
+        return $this->db->select('articles', [
+            'ID',
+            'authorID',
+            'categoryID',
+            'title',
+            'contentShort',
+            'relatedImagePath',
+            'tags',
+            'date',
+            'lastEdit'
+        ]);
+    }
+
+    /**
+     * @param int $categoryID
+     * @return array
+     */
+    public function listByCategory(int $categoryID): array
+    {
+        return $this->db->select('articles', [
+            'ID',
+            'authorID',
+            'categoryID',
+            'title',
+            'contentShort',
+            'relatedImagePath',
+            'tags',
+            'date',
+            'lastEdit'
+        ], [
+            'categoryID[=]' => $categoryID
+        ]);
+    }
+
+    /**
      * Checks success of previous operation
      *
      * @return bool
      */
-    public function checkSuccess(): bool
+    public
+    function checkSuccess(): bool
     {
         return $this->success;
     }
