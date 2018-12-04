@@ -7,6 +7,9 @@ use ArchCMS\Controllers\Article;
 $Article = new Article();
 
 switch ($_SERVER['REQUEST_METHOD']) {
+    /*
+     * SERVES DATA INSERT FUNCTIONALITY
+     */
     case 'POST':
         // raise an error when fields are not set
         if (!isset(
@@ -46,7 +49,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         ];
         break;
     /*
-     * GET METHOD SERVES DATA READ FUNCTIONALITY
+     * SERVES RESOURCE READ FUNCTIONALITY
      */
     case 'GET':
         // if user wants header without content
@@ -89,7 +92,33 @@ switch ($_SERVER['REQUEST_METHOD']) {
         ];
 
         break;
+    /*
+     * SERVES DATA WITHDRAWAL FUNCTIONALITY
+     */
+    case 'DELETE':
+        // if articleID is given - delete
+        if (is_numeric(Router::getNthURI(2))) {
+            $Article->delete(Router::getNthURI(2));
+            if ($Article->checkSuccess()) {
+                return [
+                    'statusCode'    => '200',
+                    'statusMessage' => 'OK'
+                ];
+            }
+            return [
+                'statusCode'    => '404',
+                'statusMessage' => 'Not Found'
+            ];
 
+        }
+        // return 404 is theres nothing to delete
+        return [
+            'statusCode'    => '404',
+            'statusMessage' => 'Not Found'
+        ];
+        break;
+
+    // When used different method than specified above
     default:
         return [
             'statusCode'    => 405,

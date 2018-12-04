@@ -117,12 +117,25 @@ class Article
     }
 
     /**
+     * @param int $articleID
+     * @return bool
+     */
+    public function delete(int $articleID): void
+    {
+        $result = $this->db->delete('articles', [
+            'ID[=]' => $articleID
+        ]);
+        if ($result->rowCount()) {
+            $this->success = true;
+        }
+    }
+
+    /**
      * Checks success of previous operation
      *
      * @return bool
      */
-    public
-    function checkSuccess(): bool
+    public function checkSuccess(): bool
     {
         return $this->success;
     }
