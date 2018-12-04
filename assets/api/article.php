@@ -45,8 +45,13 @@ switch ($_SERVER['REQUEST_METHOD']) {
             'statusMessage' => 'Database query problem'
         ];
         break;
+    /*
+     * GET METHOD SERVES DATA READ FUNCTIONALITY
+     */
     case 'GET':
+        // if user wants header without content
         if (Router::getNthURI(2) === 'list') {
+            // if user gave post category ID
             if (isset($_GET['categoryID'])) {
                 return [
                     'statusCode'    => 200,
@@ -54,6 +59,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
                     'data'          => $Article->listByCategory($_GET['categoryID'])
                 ];
             }
+            // if user did not gave any category
             return [
                 'statusCode'    => 200,
                 'statusMessage' => 'OK',
@@ -61,11 +67,20 @@ switch ($_SERVER['REQUEST_METHOD']) {
             ];
         }
 
+        // if only numeric given, return full article details
         if (is_numeric(Router::getNthURI(2))) {
+            $result = $Article->getArticle(Router::getNthURI(2));
+            // if there's no article with selected ID
+            if (empty($result)) {
+                return [
+                    'statusCode'    => 404,
+                    'statusMessage' => 'Not Found'
+                ];
+            }
             return [
                 'statusCode'    => 200,
                 'statusMessage' => 'OK',
-                'data'          => $Article->getArticle(Router::getNthURI(2))
+                'data'          => $result
             ];
         }
         return [
