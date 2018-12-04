@@ -8,7 +8,7 @@
 
 namespace ArchCMS\Models;
 
-use DBLS\Interfaces\ValidateInterface;
+use ArchCMS\Interfaces\ValidateInterface;
 use Exception;
 
 /**

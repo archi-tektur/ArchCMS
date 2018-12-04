@@ -27,7 +27,7 @@ $configPath = '../config';
 /*
 Now enter relative path to the Composer sources autoloader (usually vendor/autoload.php)
  */
-$vendor = '../vendor/autoload.php';
+$vendor = '\\..\\vendor\\autoload.php';
 /*
 Better do not edit the code below.
  */
@@ -47,7 +47,7 @@ try {
     }
 
     // ENSURE HAVING VENDOR FILES
-    if (!file_exists($vendor)) {
+    if (!file_exists(__DIR__ . $vendor)) {
         throw new ArchFWException(
             'VENDOR files were not found, run \'composer install\'' .
             ' over main framework folder.',
@@ -55,7 +55,7 @@ try {
         );
     }
     // LOADING LIBS AND CLASSES
-    include_once $vendor;
+    include_once __DIR__ . $vendor;
     new Service($configPath);
 } catch (ArchFWException $err) {
     // Catch the exceptions that came before running an app.

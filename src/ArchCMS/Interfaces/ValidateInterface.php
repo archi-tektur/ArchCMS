@@ -6,7 +6,7 @@
  * Time: 21:21
  */
 
-namespace DBLS\Interfaces;
+namespace ArchCMS\Interfaces;
 
 use Exception;
 
