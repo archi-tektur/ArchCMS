@@ -56,6 +56,8 @@ class Article
     }
 
     /**
+     * Get article details
+     *
      * @param int $articleID
      * @return array
      */
@@ -78,6 +80,8 @@ class Article
     }
 
     /**
+     * List all articles headers
+     *
      * @return array
      */
     public function listArticles(): array
@@ -96,6 +100,8 @@ class Article
     }
 
     /**
+     * List all article header from selected category
+     *
      * @param int $categoryID
      * @return array
      */
@@ -117,8 +123,10 @@ class Article
     }
 
     /**
+     * Delete element with given ID
+     *
      * @param int $articleID
-     * @return bool
+     * @return void
      */
     public function delete(int $articleID): void
     {
@@ -131,7 +139,7 @@ class Article
     }
 
     /**
-     * Checks success of previous operation
+     * Returns success status of previous operation
      *
      * @return bool
      */

@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Use familous imports
+ */
 use \ArchFW\Controllers\Router;
 use ArchCMS\Models\ArticleData;
 use ArchCMS\Controllers\Article;
