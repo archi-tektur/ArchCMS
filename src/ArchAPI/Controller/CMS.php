@@ -3,7 +3,7 @@
 /**
  * ArchCMS is Content Management System basics on ArchFW
  *
- * 
+ *
  *
  * PHP version 7.2
  *
@@ -13,66 +13,73 @@
  * @copyright archi_tektur group
  * @license   MIT
  * @version   4.0
- * @link      
+ * @link
  */
 
 namespace ArchAPI\Controller;
 
-use ArchFW\Controller\Error;
 use ArchFW\Model\DatabaseFactory;
 
-class CMS{
+class CMS
+{
 
     private $_db;
 
-    public static function addPost($data){
-        
-        if( isset($data) ){
+    public static function addPost($data)
+    {
+
+        if (isset($data)) {
             $_db = DatabaseFactory::getInstance();
-            $_db->insert("article", [
-                "title" => $data['title'],
+            $_db->insert('article', [
+                'title'     => $data['title'],
                 // "header_img" => $data['header_img'],
-                "meta_tags" => $data['meta_tags'],
+                'meta_tags' => $data['meta_tags'],
                 // "category" => $data['category'],
-                "content" => $data['editorContent'],
-                "time" => date("y:m:d")
+                'content'   => $data['editorContent'],
+                'time'      => date('y:m:d')
                 // "author" => $data['author']
             ]);
-            if($_db->error()[1] != NULL)
-                print_r(["error" => "Database error"]);
-            else 
-                print_r(["status" => "Done"]);
-            
-        }
-        else print_r(["error" => "Wrong Data"]);
-    }
-
-    public static function getPosts(){
-            $_db = DatabaseFactory::getInstance();
-            $result = [];
-
-            $_data = $_db->select('article', [
-                'id', 'title', 'time'
-            ]);
-
-            foreach($_data as $item){
-                $result[] = $item;
+            if ($_db->error()[1] != null) {
+                print_r(['error' => 'Database error']);
+            } else {
+                print_r(['status' => 'Done']);
             }
-            return json_encode($result);
+        } else {
+            print_r(["error" => "Wrong Data"]);
+        }
     }
 
-    public static function getEditedPost($id){
+    public static function getPosts()
+    {
         $_db = DatabaseFactory::getInstance();
         $result = [];
 
-        $_data = $_db->select('article', 
-            ['id', 'title', 'content', 'time'],
-            ['id' => $id]
-        );
+        $_data = $_db->select('article', [
+            'id',
+            'title',
+            'time'
+        ]);
 
-        foreach($_data as $item){
+        foreach ($_data as $item) {
             $result[] = $item;
         }
         return json_encode($result);
-}
+    }
+
+    public static function getEditedPost($postID): array
+    {
+        $database = DatabaseFactory::getInstance();
+        $result = [];
+
+        $data = $database->select(
+            'article',
+            ['id', 'title', 'content', 'time'],
+            ['id' => $postID]
+        );
+
+        foreach ($data as $item) {
+            $result[] = $item;
+        }
+        return json_encode($result);
+    }
 }

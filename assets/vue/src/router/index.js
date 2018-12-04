@@ -4,7 +4,7 @@ import start from '../components/start'
 import info from '../components/info'
 import posts from '../components/posts'
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
     routes: [

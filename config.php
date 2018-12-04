@@ -21,10 +21,10 @@ return [
     # If you want to add your own setting, place it carefully below this settings, match the key so you won't override actual settings. You can reach this config as defined CONFIG constant in every scope.
 
     # Production server switch. When set to false, all PHP errors will be hidden, written to logs. When set to true, all PHP erros will occur, helping debug the application.
-    'production'  => false,
+    'production'       => false,
 
     # This settings will set the security details of your app. Keep it untouched, it's field for application programmer.
-    'security'    => [
+    'security'         => [
         # Force users to access page via HTTP Secure protocol
         'https' => false,
 
@@ -33,7 +33,7 @@ return [
     ],
 
     # Every page has
-    'metaConfig'  => [
+    'metaConfig'       => [
         'pageTitle'       => 'ArchCMS',
         'pageEncoding'    => 'UTF-8'
         /* NOT NULL*/,
@@ -56,39 +56,39 @@ return [
         'link' => '/css/style-desktop.css',
     ],
     */
-    'stylesheets' => [
-        "Example" => [
+    'stylesheets'      => [
+        "Example"   => [
             'name' => 'example stylesheet',
             'type' => 'text/css',
             'desc' => 'This stylesheet is for better view of startup page, ',
             'rel'  => 'stylesheet',
             'link' => '/css/master.css',
         ],
-        "Desktop" => [
+        "Desktop"   => [
             'name' => 'Style - Desktop' /* NOT NULL*/,
             'type' => 'text/css' /* NOT NULL*/,
             'desc' => '',
-            'rel' => 'stylesheet' /* NOT NULL*/,
+            'rel'  => 'stylesheet' /* NOT NULL*/,
             'link' => '../css/style-desktop.css' /* NOT NULL*/,
         ],
         "Post-View" => [
             'name' => 'Style - Post-View',
             'type' => 'text/css',
             'desc' => '',
-            'rel' => 'stylesheet',
+            'rel'  => 'stylesheet',
             'link' => '../css/style-post-real-time-view.css'
         ],
         "Panel-CMS" => [
             'name' => 'Style - PanelCMS',
             'type' => 'text/css',
             'desc' => '',
-            'rel' => 'stylesheet',
+            'rel'  => 'stylesheet',
             'link' => '../css/style-cmspanel.css'
         ]
     ],
 
     # Here enter database details, if you want to use our extention.
-    'DBConfig'    => [
+    'DBConfig'         => [
         'databaseType' => 'mysql',
         'databaseName' => 'archcms',
         'server'       => 'localhost',
@@ -108,10 +108,10 @@ return [
 
     # Add adresses to our router. Key here is a URL adress user enters, and value is name of wrapper and twig files. When file is in subdirectory, you can use '/', e.g. 'login/recoverpassword'.
     'appRouter'        => [
-        '/'     => 'index',
-        '/test' => 'test',
+        '/'       => 'index',
+        '/test'   => 'test',
         '/editor' => 'editor',
-        '/editor/' => 'editor'
+        '/editor' => 'editor'
     ],
 
     # Path to catalogue with errorcodes, files inside should be named like an errors they are written for - e.g. '404.html'. PHP is not allowed in this files. Until you modify framework internal structure (not recommended!), no need to touch this.
