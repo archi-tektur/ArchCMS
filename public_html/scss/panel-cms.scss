@@ -1,0 +1,127 @@
+
+.panel-cms-container{
+    display: flex;
+    flex-direction: row;
+    .panel-cms-header{
+    width: 25%;
+    height: 100vh;
+    background-color: $archBgColor;
+    text-align: center;
+        .panel-cms-header_user{
+            height: 100px;
+            color: $archContentFntColor;
+            background-color: $archAuthorBgColor;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        nav ul{
+            margin:0;
+            padding: 0;
+            li{
+                list-style: none;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: 0.5s;
+                cursor: pointer;
+                    &:hover{
+                        background-color: $archAuthorBgColor;
+                }
+            }
+        }
+
+        nav ul li a{
+            color: $archContentFntColor;
+            text-decoration: none;
+        }
+
+        h1{
+            width: 100%;
+            background-color: $archHeadBgColor;
+            color: $archHeadFntColor;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 70px;
+        }
+    }
+    .panel-cms-main{
+        width: 75%;
+        display: flex;
+        flex-direction: column;
+        background-image: url('../img/arch-cms-bg.jpeg');
+        background-size: 100% 100%;
+        height:100vh;
+        h2{
+            width: 100%;
+            background-color: $archContentTitleColor;
+            color: $archContentTitleFntColor;
+            margin: 0;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        p{
+            background-color: $archInfoBgColor;
+            color: $archHeadFntColor;
+            width: 90%;
+            margin: 20px auto;
+            padding: 15px;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .cms-info{
+            overflow-y: auto;
+            height: calc(100vh - 70px);
+            label{
+                width: 200px;
+            }
+            input{
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+        }
+        .flex-div{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .flex-div_item{
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                padding: 10px;
+                margin: 10px;
+
+                ul{
+                    padding: 0;
+                }
+
+                ul li{
+                    padding: 0;
+                    margin: 0;
+                    list-style-type: none;
+                }
+            }
+            .why-cms{
+                background-color: #0055ee;
+            }
+            .changeLog{
+                background-color: #00ee55;
+            }
+            
+        }
+    }
+}

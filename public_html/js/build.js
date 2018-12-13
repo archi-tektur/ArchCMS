@@ -12549,6 +12549,7 @@ module.exports = {
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   name: 'panel-cms',
@@ -12574,12 +12575,22 @@ module.exports = {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     name: 'start',
     data: function data() {
         return {
-            cmsVersion: '1.0.0'
+            cmsVersion: '1.0.0',
+            whyCms: [{ id: 0, className: 'why-cms', header: "Why ArchCMS?", array: [{ id: 0, content: "Minimum content, Maximum possibilities" }, { id: 1, content: "Adding what you want" }, { id: 2, content: "Generating the lightest websites" }, { id: 3, content: "Step by step documentation" }, { id: 4, content: "Authors always can help you with all your problems" }] }, { id: 1, className: 'changeLog', header: "Change Log", array: [{ id: 0, content: "1.0.0 - First version of CMS" }, { id: 1, content: "2.0.0 - Many, many more bugs added" }] }]
         };
     }
 });
@@ -12600,12 +12611,14 @@ module.exports = {
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     name: 'info',
     data: function data() {
         return {
-            site: [{ id: 0, name: 'pageTitle', title: 'Page Title', content: 'ArchCMS Boilerplate' }, { id: 1, name: 'pageEncoding', title: 'Page Encoding', content: 'UTF-8' }, { id: 2, name: 'pageLanguage', title: 'Page Language', content: 'EN_en' }, { id: 3, name: 'pageDescription', title: 'Page Description', content: 'Boilerplate of ArchCMS#1.0.0' }, { id: 4, name: 'pageKeywords', title: 'Page Keywords', content: 'boilerplate archcms 1.0.0 archi-tektur mk archi_tektur' }, { id: 5, name: 'pageAuthor', title: 'Page Author', content: 'archi-tektur Group' }]
+            site: [{ id: 0, name: 'pageTitle', title: 'Page Title: ', content: 'ArchCMS Boilerplate' }, { id: 1, name: 'pageEncoding', title: 'Page Encoding: ', content: 'UTF-8' }, { id: 2, name: 'pageLanguage', title: 'Page Language: ', content: 'EN_en' }, { id: 3, name: 'pageDescription', title: 'Page Description: ', content: 'Boilerplate of ArchCMS#1.0.0' }, { id: 4, name: 'pageKeywords', title: 'Page Keywords: ', content: 'boilerplate archcms 1.0.0 archi-tektur mk archi_tektur' }, { id: 5, name: 'pageAuthor', title: 'Page Author: ', content: 'archi-tektur Group' }]
         };
     }
 });
@@ -14771,7 +14784,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_cmspanel_vue__ = __webpack_require__(16);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2622fee4_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_cmspanel_vue__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_a03ce738_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_cmspanel_vue__ = __webpack_require__(53);
 var normalizeComponent = __webpack_require__(1)
 /* script */
 
@@ -14788,7 +14801,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_cmspanel_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2622fee4_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_cmspanel_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_a03ce738_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_cmspanel_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -14803,7 +14816,7 @@ var Component = normalizeComponent(
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"container"},[_c('header',{staticClass:"panel-cms-header"},[_c('h1',{domProps:{"innerHTML":_vm._s(_vm.header_title)}}),_vm._v(" "),_c('nav',[_c('ul',[_vm._l((_vm.header_navbar),function(item){return _c('li',{key:item.id},[_c('router-link',{attrs:{"to":item.path},domProps:{"innerHTML":_vm._s(item.text)}})],1)}),_vm._v(" "),_vm._m(0)],2)])]),_vm._v(" "),_c('main',{staticClass:"panel-cms-main"},[_c('router-view')],1),_vm._v(" "),_c('aside',{staticClass:"panel-cms-aside"}),_vm._v(" "),_c('footer',{staticClass:"panel-cms-footer"})])}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"panel-cms-container"},[_c('header',{staticClass:"panel-cms-header"},[_c('h1',{domProps:{"innerHTML":_vm._s(_vm.header_title)}}),_vm._v(" "),_c('div',{staticClass:"panel-cms-header_user"},[_vm._v("Unused")]),_vm._v(" "),_c('nav',[_c('ul',[_vm._l((_vm.header_navbar),function(item){return _c('li',{key:item.id},[_c('router-link',{attrs:{"to":item.path},domProps:{"innerHTML":_vm._s(item.text)}})],1)}),_vm._v(" "),_vm._m(0)],2)])]),_vm._v(" "),_c('main',{staticClass:"panel-cms-main"},[_c('router-view')],1),_vm._v(" "),_c('aside',{staticClass:"panel-cms-aside"}),_vm._v(" "),_c('footer',{staticClass:"panel-cms-footer"})])}
 var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('li',[_c('a',{attrs:{"href":"/editor"}},[_vm._v("Posts")])])}]
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
@@ -17474,7 +17487,7 @@ if (inBrowser && window.Vue) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_start_vue__ = __webpack_require__(17);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_d05f9706_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_start_vue__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_693da028_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_start_vue__ = __webpack_require__(57);
 var normalizeComponent = __webpack_require__(1)
 /* script */
 
@@ -17491,7 +17504,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_start_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_d05f9706_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_start_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_693da028_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_start_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -17506,7 +17519,7 @@ var Component = normalizeComponent(
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('section',[_c('h2',[_vm._v("Hello!")]),_vm._v(" "),_c('article',[_c('p',[_vm._v("You are using ArchCMS "+_vm._s(_vm.cmsVersion)+". Have fun, and make your dream site.")])])])}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('section',[_c('h2',[_vm._v("Hello!")]),_vm._v(" "),_c('article',[_c('p',[_vm._v("You are using ArchCMS "+_vm._s(_vm.cmsVersion)+". Have fun, and make your dream site.")])]),_vm._v(" "),_c('article',{staticClass:"flex-div"},_vm._l((_vm.whyCms),function(item){return _c('div',{key:item.id,staticClass:"flex-div_item",class:item.className},[_c('h3',{domProps:{"textContent":_vm._s(item.header)}}),_vm._v(" "),_c('ul',_vm._l((item.array),function(itemA){return _c('li',{key:itemA.id,domProps:{"textContent":_vm._s(itemA.content)}})}))])}))])}
 var staticRenderFns = []
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
@@ -17518,7 +17531,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_info_vue__ = __webpack_require__(18);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7bf8b1be_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_info_vue__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_353884de_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_info_vue__ = __webpack_require__(59);
 var normalizeComponent = __webpack_require__(1)
 /* script */
 
@@ -17535,7 +17548,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_info_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7bf8b1be_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_info_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_353884de_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_info_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -17550,7 +17563,7 @@ var Component = normalizeComponent(
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('section',[_c('h2',[_vm._v("Info")]),_vm._v(" "),_vm._l((_vm.site),function(item){return _c('p',{key:item.id},[_c('label',{attrs:{"for":item.name},domProps:{"textContent":_vm._s(item.title)}}),_vm._v(" "),_c('input',{directives:[{name:"model",rawName:"v-model",value:(item.content),expression:"item.content"}],attrs:{"type":"text","name":item.name},domProps:{"value":(item.content)},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(item, "content", $event.target.value)}}}),_vm._v("\n            "+_vm._s(item.content)+"\n        ")])})],2)}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('section',[_c('h2',[_vm._v("Info")]),_vm._v(" "),_c('article',{staticClass:"cms-info"},_vm._l((_vm.site),function(item){return _c('p',{key:item.id},[_c('label',{attrs:{"for":item.name},domProps:{"textContent":_vm._s(item.title)}}),_vm._v(" "),_c('input',{directives:[{name:"model",rawName:"v-model",value:(item.content),expression:"item.content"}],attrs:{"type":"text","name":item.name},domProps:{"value":(item.content)},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(item, "content", $event.target.value)}}})])}))])}
 var staticRenderFns = []
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);

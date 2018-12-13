@@ -1,7 +1,8 @@
 <template>
-    <div class="container">
+    <div class="panel-cms-container">
         <header class="panel-cms-header">
             <h1 v-html="header_title"></h1>
+            <div class="panel-cms-header_user">Unused</div>
             <nav><ul>
                 <li v-for="item in header_navbar" v-bind:key="item.id" >
                 <router-link

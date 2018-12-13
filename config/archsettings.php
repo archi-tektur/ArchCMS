@@ -71,36 +71,8 @@ return [
             'type' => 'text/css',
             'desc' => 'This stylesheet is for better view of startup page, ',
             'rel'  => 'stylesheet',
-            'link' => '/css/master.css',
+            'link' => '/css/main.css',
         ],
-        "Post-View" => [
-            'name' => 'Style - Post-View',
-            'type' => 'text/css',
-            'desc' => '',
-            'rel' => 'stylesheet',
-            'link' => '/css/style-post-real-time-view.css'
-        ],
-        "Panel-CMS" => [
-            'name' => 'Style - PanelCMS',
-            'type' => 'text/css',
-            'desc' => '',
-            'rel' => 'stylesheet',
-            'link' => '/css/style-cmspanel.css'
-        ],
-        "Imgur-Stylesheet" => [
-            'name' => 'Style - Imgur',
-            'type' => 'text/css',
-            'desc' => '',
-            'rel' => 'stylesheet',
-            'link' => '/css/imgur-style.css'
-        ],
-        "Imgur-Mobile" => [
-            'name' => 'Style - Imgur Mobile',
-            'type' => 'text/css',
-            'desc' => '',
-            'rel' => 'stylesheet',
-            'link' => '/css/imgur-mobile-style.css'
-        ]
     ],
 
     /*
