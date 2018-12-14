@@ -183,6 +183,37 @@ body.loading .loading-modal {
       .panel-cms-container .panel-cms-main .flex-div .changeLog {
         background-color: #00ee55; }
 
+.editor-cms-header {
+  width: 100%;
+  height: 100px;
+  background-color: #122242;
+  color: #FF6D37;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .editor-cms-header h1 {
+    margin: 0; }
+
+.editor-cms-main {
+  display: flex; }
+  .editor-cms-main .editor {
+    width: 80%; }
+  .editor-cms-main .rawHTML {
+    width: 80%;
+    display: none; }
+  .editor-cms-main .postAttr {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .editor-cms-main .editor-cms-main_aside-bar {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+
 body {
   padding: 0;
   margin: 0;

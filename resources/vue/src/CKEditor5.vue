@@ -1,14 +1,16 @@
 <template>
      <div class="container">
-       <header>
+       <header class="editor-cms-header">
          <h1>ArchCMS</h1>
        </header>
-        <div class="editor" :style="{width: styles.editorWidth}">
-          <vue-ckeditor :config="editorConfig" type="classic" v-model="htmlContent"></vue-ckeditor><br /><br />
+        <main class="editor-cms-main">
+          <div class="editor">
+          <vue-ckeditor :config="editorConfig" type="classic" v-model="htmlContent"></vue-ckeditor>
+          <div class="rawHTML" v-html="htmlContent"></div>
         </div>
-          <div :style="{width: styles.postViewWidth, display: styles.postViewDisplay}" class="rawHTML" v-html="htmlContent"></div><br /><br />
-
-          <div class="postAttr" :style="{width: styles.postAttrWidth}">
+        <div class="editor-cms-main_aside-bar">
+          <div class="postAttr">
+            <h2>Post Attributes</h2>
              <div class="dropzone">
                 <div class="info"></div>
             </div>
@@ -23,6 +25,7 @@
             
           </div>
             <div class="editPost">
+              <h2>Post Managening</h2>
               <button v-on:click="newPost">New Post</button>
               <div v-for="item in posts" :key="item.id">
                 <button v-text="item.title" :value="item.id" v-on:click="getPostToEdit(item.id)"></button>
@@ -30,6 +33,10 @@
             </div>
             <button v-on:click="getEditorContent">Show the fucking code</button>
           </div>
+        </div>
+          
+        </main>
+          
 
         </div>
 </template>
@@ -63,12 +70,6 @@ Vue.use(VueCkeditor.plugin, {
         {id: 1, inputId: "meta_tags", title: "Meta Tags", type: "text", name: "meta_tags", placeholder: "Type meta tags", content: ""}
       ],
       displayPostView: true,
-      styles: {
-        editorWidth: '40%',
-        postViewWidth: '40%',
-        postAttrWidth: '20%',
-        postViewDisplay: 'initial'
-      },
       posts: '',
       
       instance: null,

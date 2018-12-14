@@ -11797,6 +11797,13 @@ process.umask = function() { return 0; };
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -11818,12 +11825,6 @@ __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */].use(__WEBPACK_IMPORTED_MODU
     return {
       postAttr: [{ id: 0, inputId: "title", title: "Title", type: "text", name: "title", placeholder: "Type a title", content: "" }, { id: 1, inputId: "meta_tags", title: "Meta Tags", type: "text", name: "meta_tags", placeholder: "Type meta tags", content: "" }],
       displayPostView: true,
-      styles: {
-        editorWidth: '40%',
-        postViewWidth: '40%',
-        postAttrWidth: '20%',
-        postViewDisplay: 'initial'
-      },
       posts: '',
 
       instance: null,
@@ -12985,7 +12986,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_CKEditor5_vue__ = __webpack_require__(6);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_58b9dfdb_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CKEditor5_vue__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_207a8552_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CKEditor5_vue__ = __webpack_require__(51);
 function injectStyle (ssrContext) {
   __webpack_require__(24)
 }
@@ -13005,7 +13006,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_CKEditor5_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_58b9dfdb_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CKEditor5_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_207a8552_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CKEditor5_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -13026,7 +13027,7 @@ var content = __webpack_require__(25);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(27)("169f7fc8", content, true, {});
+var update = __webpack_require__(27)("528bb274", content, true, {});
 
 /***/ }),
 /* 25 */
@@ -14772,8 +14773,8 @@ module.exports = function (str, opts) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"container"},[_vm._m(0),_vm._v(" "),_c('div',{staticClass:"editor",style:({width: _vm.styles.editorWidth})},[_c('vue-ckeditor',{attrs:{"config":_vm.editorConfig,"type":"classic"},model:{value:(_vm.htmlContent),callback:function ($$v) {_vm.htmlContent=$$v},expression:"htmlContent"}}),_c('br'),_c('br')],1),_vm._v(" "),_c('div',{staticClass:"rawHTML",style:({width: _vm.styles.postViewWidth, display: _vm.styles.postViewDisplay}),domProps:{"innerHTML":_vm._s(_vm.htmlContent)}}),_c('br'),_c('br'),_vm._v(" "),_c('div',{staticClass:"postAttr",style:({width: _vm.styles.postAttrWidth})},[_vm._m(1),_vm._v(" "),_vm._l((_vm.postAttr),function(item){return _c('p',{key:item.id},[_c('label',[_vm._v(_vm._s(item.title)+":"),_c('br'),_vm._v(" "),((item.type)==='checkbox')?_c('input',{directives:[{name:"model",rawName:"v-model",value:(item.content),expression:"item.content"}],attrs:{"id":item.inputId,"name":item.name,"placeholder":item.placeholder,"type":"checkbox"},domProps:{"checked":Array.isArray(item.content)?_vm._i(item.content,null)>-1:(item.content)},on:{"change":function($event){var $$a=item.content,$$el=$event.target,$$c=$$el.checked?(true):(false);if(Array.isArray($$a)){var $$v=null,$$i=_vm._i($$a,$$v);if($$el.checked){$$i<0&&(_vm.$set(item, "content", $$a.concat([$$v])))}else{$$i>-1&&(_vm.$set(item, "content", $$a.slice(0,$$i).concat($$a.slice($$i+1))))}}else{_vm.$set(item, "content", $$c)}}}}):((item.type)==='radio')?_c('input',{directives:[{name:"model",rawName:"v-model",value:(item.content),expression:"item.content"}],attrs:{"id":item.inputId,"name":item.name,"placeholder":item.placeholder,"type":"radio"},domProps:{"checked":_vm._q(item.content,null)},on:{"change":function($event){_vm.$set(item, "content", null)}}}):_c('input',{directives:[{name:"model",rawName:"v-model",value:(item.content),expression:"item.content"}],attrs:{"id":item.inputId,"name":item.name,"placeholder":item.placeholder,"type":item.type},domProps:{"value":(item.content)},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(item, "content", $event.target.value)}}}),_vm._v(" "),(item.content != '')?_c('p',[_vm._v(_vm._s(item.content))]):_c('p',[_vm._v(_vm._s(item.alertmsg))])])])}),_vm._v(" "),_c('button',{attrs:{"type":"submit"},on:{"click":_vm.sendPost}},[_vm._v("Send")])],2),_vm._v(" "),_c('div',{staticClass:"editPost"},[_c('button',{on:{"click":_vm.newPost}},[_vm._v("New Post")]),_vm._v(" "),_vm._l((_vm.posts),function(item){return _c('div',{key:item.id},[_c('button',{attrs:{"value":item.id},domProps:{"textContent":_vm._s(item.title)},on:{"click":function($event){_vm.getPostToEdit(item.id)}}}),_vm._v(" "),_c('span',{domProps:{"textContent":_vm._s(item.time)}})])}),_vm._v(" "),_c('button',{on:{"click":_vm.getEditorContent}},[_vm._v("Show the fucking code")])],2)])}
-var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('header',[_c('h1',[_vm._v("ArchCMS")])])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"dropzone"},[_c('div',{staticClass:"info"})])}]
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"container"},[_vm._m(0),_vm._v(" "),_c('main',{staticClass:"editor-cms-main"},[_c('div',{staticClass:"editor"},[_c('vue-ckeditor',{attrs:{"config":_vm.editorConfig,"type":"classic"},model:{value:(_vm.htmlContent),callback:function ($$v) {_vm.htmlContent=$$v},expression:"htmlContent"}}),_vm._v(" "),_c('div',{staticClass:"rawHTML",domProps:{"innerHTML":_vm._s(_vm.htmlContent)}})],1),_vm._v(" "),_c('div',{staticClass:"editor-cms-main_aside-bar"},[_c('div',{staticClass:"postAttr"},[_c('h2',[_vm._v("Post Attributes")]),_vm._v(" "),_vm._m(1),_vm._v(" "),_vm._l((_vm.postAttr),function(item){return _c('p',{key:item.id},[_c('label',[_vm._v(_vm._s(item.title)+":"),_c('br'),_vm._v(" "),((item.type)==='checkbox')?_c('input',{directives:[{name:"model",rawName:"v-model",value:(item.content),expression:"item.content"}],attrs:{"id":item.inputId,"name":item.name,"placeholder":item.placeholder,"type":"checkbox"},domProps:{"checked":Array.isArray(item.content)?_vm._i(item.content,null)>-1:(item.content)},on:{"change":function($event){var $$a=item.content,$$el=$event.target,$$c=$$el.checked?(true):(false);if(Array.isArray($$a)){var $$v=null,$$i=_vm._i($$a,$$v);if($$el.checked){$$i<0&&(_vm.$set(item, "content", $$a.concat([$$v])))}else{$$i>-1&&(_vm.$set(item, "content", $$a.slice(0,$$i).concat($$a.slice($$i+1))))}}else{_vm.$set(item, "content", $$c)}}}}):((item.type)==='radio')?_c('input',{directives:[{name:"model",rawName:"v-model",value:(item.content),expression:"item.content"}],attrs:{"id":item.inputId,"name":item.name,"placeholder":item.placeholder,"type":"radio"},domProps:{"checked":_vm._q(item.content,null)},on:{"change":function($event){_vm.$set(item, "content", null)}}}):_c('input',{directives:[{name:"model",rawName:"v-model",value:(item.content),expression:"item.content"}],attrs:{"id":item.inputId,"name":item.name,"placeholder":item.placeholder,"type":item.type},domProps:{"value":(item.content)},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(item, "content", $event.target.value)}}}),_vm._v(" "),(item.content != '')?_c('p',[_vm._v(_vm._s(item.content))]):_c('p',[_vm._v(_vm._s(item.alertmsg))])])])}),_vm._v(" "),_c('button',{attrs:{"type":"submit"},on:{"click":_vm.sendPost}},[_vm._v("Send")])],2),_vm._v(" "),_c('div',{staticClass:"editPost"},[_c('h2',[_vm._v("Post Managening")]),_vm._v(" "),_c('button',{on:{"click":_vm.newPost}},[_vm._v("New Post")]),_vm._v(" "),_vm._l((_vm.posts),function(item){return _c('div',{key:item.id},[_c('button',{attrs:{"value":item.id},domProps:{"textContent":_vm._s(item.title)},on:{"click":function($event){_vm.getPostToEdit(item.id)}}}),_vm._v(" "),_c('span',{domProps:{"textContent":_vm._s(item.time)}})])}),_vm._v(" "),_c('button',{on:{"click":_vm.getEditorContent}},[_vm._v("Show the fucking code")])],2)])])])}
+var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('header',{staticClass:"editor-cms-header"},[_c('h1',[_vm._v("ArchCMS")])])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"dropzone"},[_c('div',{staticClass:"info"})])}]
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
 
