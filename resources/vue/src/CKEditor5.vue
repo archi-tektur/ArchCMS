@@ -10,8 +10,9 @@
         </div>
         <div class="editor-cms-main_aside-bar">
           <div class="postAttr">
-            <h2>Post Attributes</h2>
-             <div class="dropzone">
+            <h2 v-on:click="asideItemChangeDisplay">Post Attributes</h2>
+            <div class="aside-bar_item aside-bar_item-hidden">
+               <div class="dropzone">
                 <div class="info"></div>
             </div>
             <p v-for="item in postAttr" v-bind:key="item.id">
@@ -22,16 +23,20 @@
               </label>
             </p>
             <button type="submit" v-on:click="sendPost">Send</button>
+            </div>
             
           </div>
             <div class="editPost">
-              <h2>Post Managening</h2>
-              <button v-on:click="newPost">New Post</button>
+              <h2 v-on:click="asideItemChangeDisplay">Post Managening</h2>
+              <div class="aside-bar_item aside-bar_item-hidden">
+                <button v-on:click="newPost">New Post</button>
               <div v-for="item in posts" :key="item.id">
                 <button v-text="item.title" :value="item.id" v-on:click="getPostToEdit(item.id)"></button>
                 <span v-text="item.time" />
             </div>
             <button v-on:click="getEditorContent">Show the fucking code</button>
+              </div>
+              
           </div>
         </div>
           
@@ -129,13 +134,16 @@ Vue.use(VueCkeditor.plugin, {
     }
   },
   props: ['value'],
-  mounted(){
-    axios
-          .post("api/cms", qs.stringify({data: {operation: "get"}}))
-          .then(response => {this.posts = JSON.parse( response.data )})
-          .catch(error => console.log(error))
-  },
+  // mounted(){
+  //   axios
+  //         .post("api/cms", qs.stringify({data: {operation: "get"}}))
+  //         .then(response => {this.posts = JSON.parse( response.data )})
+  //         .catch(error => console.log(error))
+  // },
   methods: {
+    asideItemChangeDisplay: function(event){
+      event.target.parentElement.children[1].classList.toggle("aside-bar_item-hidden");
+    },
     sendPost: function(){
       var checker = false
       for(let item of this.postAttr){

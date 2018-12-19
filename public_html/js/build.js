@@ -11804,6 +11804,11 @@ process.umask = function() { return 0; };
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -11857,17 +11862,16 @@ __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */].use(__WEBPACK_IMPORTED_MODU
     };
   },
   props: ['value'],
-  mounted: function mounted() {
-    var _this = this;
-
-    __WEBPACK_IMPORTED_MODULE_3_axios___default.a.post("api/cms", __WEBPACK_IMPORTED_MODULE_4_qs___default.a.stringify({ data: { operation: "get" } })).then(function (response) {
-      _this.posts = JSON.parse(response.data);
-    }).catch(function (error) {
-      return console.log(error);
-    });
-  },
-
+  // mounted(){
+  //   axios
+  //         .post("api/cms", qs.stringify({data: {operation: "get"}}))
+  //         .then(response => {this.posts = JSON.parse( response.data )})
+  //         .catch(error => console.log(error))
+  // },
   methods: {
+    asideItemChangeDisplay: function asideItemChangeDisplay(event) {
+      event.target.parentElement.children[1].classList.toggle("aside-bar_item-hidden");
+    },
     sendPost: function sendPost() {
       var checker = false;
       var _iteratorNormalCompletion = true;
@@ -11939,15 +11943,15 @@ __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */].use(__WEBPACK_IMPORTED_MODU
       this.postImg.src = data.value;
     },
     getPostToEdit: function getPostToEdit(id) {
-      var _this2 = this;
+      var _this = this;
 
       var postData = { "operation": "getEdited", "id": id };
       __WEBPACK_IMPORTED_MODULE_3_axios___default.a.post("api/cms", __WEBPACK_IMPORTED_MODULE_4_qs___default.a.stringify({ data: postData })).then(function (response) {
         var post = JSON.parse(response.data);
         console.log(post[0].content);
-        _this2.htmlContent = post[0].content;
-        _this2.postAttr[0].content = post[0].title;
-        _this2.postAttr[1].content = post[0].meta_tags;
+        _this.htmlContent = post[0].content;
+        _this.postAttr[0].content = post[0].title;
+        _this.postAttr[1].content = post[0].meta_tags;
         document.querySelector('.status').classList.add('bg-success');
         document.querySelector('.status').innerHTML = 'Image : ' + '<br><input class="image-url" id="image-url" value=\"' + post[0].header_img + '\"/>' + '<img class="img" alt="Imgur-Upload" src=\"' + post[0].header_img + '\"/>';
       }).catch(function (error) {
@@ -12986,7 +12990,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_CKEditor5_vue__ = __webpack_require__(6);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_207a8552_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CKEditor5_vue__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_980ee428_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CKEditor5_vue__ = __webpack_require__(51);
 function injectStyle (ssrContext) {
   __webpack_require__(24)
 }
@@ -13006,7 +13010,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_CKEditor5_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_207a8552_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CKEditor5_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_980ee428_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CKEditor5_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -13027,7 +13031,7 @@ var content = __webpack_require__(25);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(27)("528bb274", content, true, {});
+var update = __webpack_require__(27)("22696826", content, true, {});
 
 /***/ }),
 /* 25 */
@@ -14773,7 +14777,7 @@ module.exports = function (str, opts) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"container"},[_vm._m(0),_vm._v(" "),_c('main',{staticClass:"editor-cms-main"},[_c('div',{staticClass:"editor"},[_c('vue-ckeditor',{attrs:{"config":_vm.editorConfig,"type":"classic"},model:{value:(_vm.htmlContent),callback:function ($$v) {_vm.htmlContent=$$v},expression:"htmlContent"}}),_vm._v(" "),_c('div',{staticClass:"rawHTML",domProps:{"innerHTML":_vm._s(_vm.htmlContent)}})],1),_vm._v(" "),_c('div',{staticClass:"editor-cms-main_aside-bar"},[_c('div',{staticClass:"postAttr"},[_c('h2',[_vm._v("Post Attributes")]),_vm._v(" "),_vm._m(1),_vm._v(" "),_vm._l((_vm.postAttr),function(item){return _c('p',{key:item.id},[_c('label',[_vm._v(_vm._s(item.title)+":"),_c('br'),_vm._v(" "),((item.type)==='checkbox')?_c('input',{directives:[{name:"model",rawName:"v-model",value:(item.content),expression:"item.content"}],attrs:{"id":item.inputId,"name":item.name,"placeholder":item.placeholder,"type":"checkbox"},domProps:{"checked":Array.isArray(item.content)?_vm._i(item.content,null)>-1:(item.content)},on:{"change":function($event){var $$a=item.content,$$el=$event.target,$$c=$$el.checked?(true):(false);if(Array.isArray($$a)){var $$v=null,$$i=_vm._i($$a,$$v);if($$el.checked){$$i<0&&(_vm.$set(item, "content", $$a.concat([$$v])))}else{$$i>-1&&(_vm.$set(item, "content", $$a.slice(0,$$i).concat($$a.slice($$i+1))))}}else{_vm.$set(item, "content", $$c)}}}}):((item.type)==='radio')?_c('input',{directives:[{name:"model",rawName:"v-model",value:(item.content),expression:"item.content"}],attrs:{"id":item.inputId,"name":item.name,"placeholder":item.placeholder,"type":"radio"},domProps:{"checked":_vm._q(item.content,null)},on:{"change":function($event){_vm.$set(item, "content", null)}}}):_c('input',{directives:[{name:"model",rawName:"v-model",value:(item.content),expression:"item.content"}],attrs:{"id":item.inputId,"name":item.name,"placeholder":item.placeholder,"type":item.type},domProps:{"value":(item.content)},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(item, "content", $event.target.value)}}}),_vm._v(" "),(item.content != '')?_c('p',[_vm._v(_vm._s(item.content))]):_c('p',[_vm._v(_vm._s(item.alertmsg))])])])}),_vm._v(" "),_c('button',{attrs:{"type":"submit"},on:{"click":_vm.sendPost}},[_vm._v("Send")])],2),_vm._v(" "),_c('div',{staticClass:"editPost"},[_c('h2',[_vm._v("Post Managening")]),_vm._v(" "),_c('button',{on:{"click":_vm.newPost}},[_vm._v("New Post")]),_vm._v(" "),_vm._l((_vm.posts),function(item){return _c('div',{key:item.id},[_c('button',{attrs:{"value":item.id},domProps:{"textContent":_vm._s(item.title)},on:{"click":function($event){_vm.getPostToEdit(item.id)}}}),_vm._v(" "),_c('span',{domProps:{"textContent":_vm._s(item.time)}})])}),_vm._v(" "),_c('button',{on:{"click":_vm.getEditorContent}},[_vm._v("Show the fucking code")])],2)])])])}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"container"},[_vm._m(0),_vm._v(" "),_c('main',{staticClass:"editor-cms-main"},[_c('div',{staticClass:"editor"},[_c('vue-ckeditor',{attrs:{"config":_vm.editorConfig,"type":"classic"},model:{value:(_vm.htmlContent),callback:function ($$v) {_vm.htmlContent=$$v},expression:"htmlContent"}}),_vm._v(" "),_c('div',{staticClass:"rawHTML",domProps:{"innerHTML":_vm._s(_vm.htmlContent)}})],1),_vm._v(" "),_c('div',{staticClass:"editor-cms-main_aside-bar"},[_c('div',{staticClass:"postAttr"},[_c('h2',{on:{"click":_vm.asideItemChangeDisplay}},[_vm._v("Post Attributes")]),_vm._v(" "),_c('div',{staticClass:"aside-bar_item aside-bar_item-hidden"},[_vm._m(1),_vm._v(" "),_vm._l((_vm.postAttr),function(item){return _c('p',{key:item.id},[_c('label',[_vm._v(_vm._s(item.title)+":"),_c('br'),_vm._v(" "),((item.type)==='checkbox')?_c('input',{directives:[{name:"model",rawName:"v-model",value:(item.content),expression:"item.content"}],attrs:{"id":item.inputId,"name":item.name,"placeholder":item.placeholder,"type":"checkbox"},domProps:{"checked":Array.isArray(item.content)?_vm._i(item.content,null)>-1:(item.content)},on:{"change":function($event){var $$a=item.content,$$el=$event.target,$$c=$$el.checked?(true):(false);if(Array.isArray($$a)){var $$v=null,$$i=_vm._i($$a,$$v);if($$el.checked){$$i<0&&(_vm.$set(item, "content", $$a.concat([$$v])))}else{$$i>-1&&(_vm.$set(item, "content", $$a.slice(0,$$i).concat($$a.slice($$i+1))))}}else{_vm.$set(item, "content", $$c)}}}}):((item.type)==='radio')?_c('input',{directives:[{name:"model",rawName:"v-model",value:(item.content),expression:"item.content"}],attrs:{"id":item.inputId,"name":item.name,"placeholder":item.placeholder,"type":"radio"},domProps:{"checked":_vm._q(item.content,null)},on:{"change":function($event){_vm.$set(item, "content", null)}}}):_c('input',{directives:[{name:"model",rawName:"v-model",value:(item.content),expression:"item.content"}],attrs:{"id":item.inputId,"name":item.name,"placeholder":item.placeholder,"type":item.type},domProps:{"value":(item.content)},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(item, "content", $event.target.value)}}}),_vm._v(" "),(item.content != '')?_c('p',[_vm._v(_vm._s(item.content))]):_c('p',[_vm._v(_vm._s(item.alertmsg))])])])}),_vm._v(" "),_c('button',{attrs:{"type":"submit"},on:{"click":_vm.sendPost}},[_vm._v("Send")])],2)]),_vm._v(" "),_c('div',{staticClass:"editPost"},[_c('h2',{on:{"click":_vm.asideItemChangeDisplay}},[_vm._v("Post Managening")]),_vm._v(" "),_c('div',{staticClass:"aside-bar_item aside-bar_item-hidden"},[_c('button',{on:{"click":_vm.newPost}},[_vm._v("New Post")]),_vm._v(" "),_vm._l((_vm.posts),function(item){return _c('div',{key:item.id},[_c('button',{attrs:{"value":item.id},domProps:{"textContent":_vm._s(item.title)},on:{"click":function($event){_vm.getPostToEdit(item.id)}}}),_vm._v(" "),_c('span',{domProps:{"textContent":_vm._s(item.time)}})])}),_vm._v(" "),_c('button',{on:{"click":_vm.getEditorContent}},[_vm._v("Show the fucking code")])],2)])])])])}
 var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('header',{staticClass:"editor-cms-header"},[_c('h1',[_vm._v("ArchCMS")])])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"dropzone"},[_c('div',{staticClass:"info"})])}]
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);

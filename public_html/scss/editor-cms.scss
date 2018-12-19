@@ -22,7 +22,7 @@
         display: none;
     }
     
-    .postAttr{
+    .postAttr, .editPost{
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -35,5 +35,26 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        overflow-y: auto;
+        background-color: $archBgColor;
+        h2{
+            cursor: pointer;
+            color: $archHeadFntColor;
+        }
+
+        .aside-bar_item{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            transition: 0.5s;
+            border-bottom: 1px solid $archHeadFntColor;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .aside-bar_item-hidden{
+            height: 0px;
+        }
     }
 }
